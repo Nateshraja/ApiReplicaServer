@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Filing Records</title>
+</head>
+<body>
+    <h1>Replicated Filing Records</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Content</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+                <tr>
+                    <td>{{ record.title }}</td>
+                    <td>{{ record.content }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="2">No data available.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
